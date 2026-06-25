@@ -1,0 +1,731 @@
+.public-shell {
+    width: min(1180px, calc(100vw - 28px));
+    margin: 0 auto;
+    padding: 18px 0 40px;
+}
+
+.hero-panel {
+    min-height: 720px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 20px;
+    padding: 34px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-panel::before,
+.hero-panel::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.32;
+}
+
+.hero-panel::before {
+    width: 380px;
+    height: 380px;
+    right: -130px;
+    top: -120px;
+    background: radial-gradient(circle, rgba(184, 138, 43, 0.4), transparent 70%);
+}
+
+.hero-panel::after {
+    width: 280px;
+    height: 280px;
+    left: -90px;
+    bottom: -120px;
+    background: radial-gradient(circle, rgba(82, 116, 88, 0.26), transparent 68%);
+}
+
+.hero-copy,
+.hero-side {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-copy h1 {
+    margin: 18px 0 10px;
+    font: 700 clamp(2.4rem, 5vw, 4.9rem)/1.02 "Noto Serif TC", "PMingLiU", serif;
+    letter-spacing: 0.04em;
+}
+
+.hero-copy p,
+.page-note,
+.draw-board p,
+.result-side-copy {
+    color: var(--muted);
+    line-height: 1.82;
+}
+
+.hero-copy p {
+    max-width: 35rem;
+    margin: 0 0 24px;
+    font-size: 1.04rem;
+}
+
+.seal-card {
+    background: rgba(255,255,255,0.62);
+    border: 1px solid rgba(112, 80, 57, 0.12);
+    border-radius: 26px;
+    padding: 20px;
+}
+
+.seal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.seal-item {
+    min-height: 140px;
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(112, 80, 57, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.seal-item strong {
+    font: 700 1.46rem/1 "Noto Serif TC", "PMingLiU", serif;
+}
+
+.seal-item h3 {
+    margin: 0;
+    font: 700 1.02rem/1.35 "Noto Serif TC", "PMingLiU", serif;
+}
+
+.seal-item p {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.page-note {
+    margin: 16px 0 0;
+    font-size: 0.88rem;
+}
+
+.draw-board {
+    padding: 28px;
+}
+
+.ritual-stage {
+    margin-top: 24px;
+    min-height: 520px;
+    display: grid;
+    place-items: center;
+    gap: 24px;
+}
+
+.ritual-orbit {
+    position: relative;
+    width: min(470px, 92vw);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+}
+
+.ritual-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(112, 80, 57, 0.16);
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 68%);
+}
+
+.ring-outer {
+    inset: 0;
+}
+
+.ring-inner {
+    inset: 56px;
+    border-style: dashed;
+}
+
+.ritual-orbit::before,
+.ritual-orbit::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.ritual-orbit::before {
+    inset: 20px;
+    background: radial-gradient(circle, rgba(184, 138, 43, 0.18), transparent 70%);
+}
+
+.ritual-orbit::after {
+    inset: 88px;
+    background: radial-gradient(circle, rgba(140, 63, 45, 0.12), transparent 72%);
+}
+
+.ritual-orbit.spinning .ritual-token {
+    animation-play-state: running;
+}
+
+.ritual-orbit.reveal .ritual-token {
+    opacity: 0.18;
+    transform: scale(0.85);
+}
+
+.ritual-orbit.reveal .ritual-token.is-selected {
+    opacity: 1;
+    transform: scale(1.12);
+    box-shadow: 0 20px 36px rgba(72, 39, 17, 0.16);
+}
+
+.ritual-core {
+    position: relative;
+    z-index: 2;
+    width: 180px;
+    aspect-ratio: 1;
+    border-radius: 36px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(245, 232, 214, 0.96));
+    border: 1px solid rgba(112, 80, 57, 0.14);
+    box-shadow: 0 18px 34px rgba(72, 39, 17, 0.1);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.ritual-core-mark {
+    font: 700 3rem/1 "Noto Serif TC", "PMingLiU", serif;
+    color: var(--brand);
+}
+
+.ritual-core-copy {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.ritual-token {
+    position: absolute;
+    width: 76px;
+    aspect-ratio: 1;
+    border-radius: 24px;
+    display: grid;
+    place-items: center;
+    color: #fff8ed;
+    font: 700 1.7rem/1 "Noto Serif TC", "PMingLiU", serif;
+    box-shadow: 0 16px 26px rgba(72, 39, 17, 0.12);
+    transition: opacity 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    animation: orbit-spin 3.6s linear infinite paused;
+}
+
+.token-metal {
+    background: var(--gold);
+    top: 18px;
+    left: 50%;
+    margin-left: -38px;
+}
+
+.token-wood {
+    background: var(--wood);
+    top: 28%;
+    right: 16px;
+}
+
+.token-water {
+    background: var(--water);
+    bottom: 18px;
+    left: 58%;
+}
+
+.token-fire {
+    background: var(--fire);
+    bottom: 24%;
+    left: 18px;
+}
+
+.token-earth {
+    background: var(--earth);
+    top: 28%;
+    left: 18px;
+}
+
+.token-metal { animation-delay: 0s; }
+.token-wood { animation-delay: -0.72s; }
+.token-water { animation-delay: -1.44s; }
+.token-fire { animation-delay: -2.16s; }
+.token-earth { animation-delay: -2.88s; }
+
+@keyframes orbit-spin {
+    0%   { transform: rotate(0deg) translateY(0); }
+    25%  { transform: rotate(90deg) translateY(-4px); }
+    50%  { transform: rotate(180deg) translateY(0); }
+    75%  { transform: rotate(270deg) translateY(4px); }
+    100% { transform: rotate(360deg) translateY(0); }
+}
+
+.ritual-trigger {
+    min-width: min(460px, 100%);
+    min-height: 76px;
+    padding: 0 28px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+    color: #fff6e8;
+    box-shadow: 0 18px 28px rgba(93, 36, 23, 0.18);
+    text-align: center;
+}
+
+.ritual-trigger span,
+.ritual-trigger strong {
+    display: block;
+}
+
+.ritual-trigger span {
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    opacity: 0.86;
+}
+
+.ritual-trigger strong {
+    margin-top: 6px;
+    font-size: 1.15rem;
+}
+
+.ritual-trigger:disabled {
+    opacity: 0.55;
+    cursor: default;
+    transform: none;
+}
+
+.result-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 18px;
+}
+
+.fortune-sheet,
+.result-side {
+    padding: 24px;
+}
+
+.yj-wrap {
+    background: #f5edd8;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+}
+
+.yj-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(139,110,70,0.04) 28px, rgba(139,110,70,0.04) 29px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(139,110,70,0.03) 28px, rgba(139,110,70,0.03) 29px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.yj-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(139,100,40,0.18);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.yj-header {
+    background: #8b2020;
+    padding: 14px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.yj-brand {
+    font-size: 0.62rem;
+    color: rgba(255,220,120,0.65);
+    letter-spacing: 6px;
+    margin-bottom: 2px;
+}
+
+.yj-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #ffe080;
+    letter-spacing: 8px;
+}
+
+.yj-number-zone {
+    padding: 22px 24px 16px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(139,100,40,0.15);
+}
+
+.yj-number-zone::before {
+    content: "☰ ☷";
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    font-size: 11px;
+    color: rgba(139,80,30,0.2);
+    letter-spacing: 4px;
+}
+
+.yj-number-zone::after {
+    content: "☵ ☲";
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 11px;
+    color: rgba(139,80,30,0.2);
+    letter-spacing: 4px;
+}
+
+.yj-num-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.yj-num-label {
+    font-size: 1.1rem;
+    color: #8b5020;
+    letter-spacing: 2px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.yj-num {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #5c1a1a;
+    line-height: 1;
+}
+
+.yj-luck {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #8b2020;
+    letter-spacing: 8px;
+    padding: 4px 20px;
+    border-top: 1px solid rgba(139,80,30,0.25);
+    border-bottom: 1px solid rgba(139,80,30,0.25);
+}
+
+.yj-body {
+    padding: 18px 22px 16px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(139,100,40,0.15);
+}
+
+.yj-body::before {
+    content: "── 五行開運籤解 ──";
+    display: block;
+    text-align: center;
+    font-size: 0.58rem;
+    color: rgba(139,80,30,0.38);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.yj-persona-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.yj-persona-label {
+    font-size: 0.68rem;
+    color: #8b5020;
+    letter-spacing: 2px;
+}
+
+.yj-persona-name {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #3a1a0a;
+    letter-spacing: 2px;
+}
+
+.yj-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.yj-meta-item {
+    background: rgba(255,255,255,0.48);
+    border: 1px solid rgba(139,100,40,0.14);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.yj-meta-k {
+    display: block;
+    font-size: 0.68rem;
+    color: #8b5020;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.yj-meta-v {
+    font-size: 0.92rem;
+    color: #5c1a1a;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.yj-quote {
+    padding: 14px 28px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid rgba(139,100,40,0.15);
+}
+
+.yj-quote-poem {
+    font-size: 0.9rem;
+    color: #5c1a1a;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    white-space: pre-line;
+    line-height: 1.9;
+}
+
+.yj-quote-desc {
+    font-size: 0.75rem;
+    color: #7a4020;
+    line-height: 1.75;
+    letter-spacing: 1px;
+}
+
+.yj-products {
+    padding: 14px 18px 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.yj-products-title {
+    text-align: center;
+    font-size: 0.6rem;
+    color: rgba(139,80,30,0.45);
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.yj-product-card {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(139,100,40,0.2);
+    border-radius: 8px;
+    padding: 14px 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.yj-product-rank {
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    background: #8b2020;
+    color: #ffe080;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+.yj-product-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    background: rgba(139,100,40,0.08);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 1px solid rgba(139,100,40,0.15);
+    overflow: hidden;
+}
+
+.yj-product-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.yj-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.yj-product-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #3a1a0a;
+    margin-bottom: 3px;
+}
+
+.yj-product-poem {
+    font-size: 0.7rem;
+    color: #7a4020;
+    letter-spacing: 1px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+}
+
+.ingredient-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ingredient-list span {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(112, 80, 57, 0.1);
+    font-size: 0.76rem;
+    color: #6a3d22;
+}
+
+.ingredient-list-yaojian span {
+    background: rgba(245, 237, 216, 0.9);
+}
+
+.yj-footer {
+    padding: 14px 24px 18px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(139,100,40,0.15);
+}
+
+.yj-footer-motto {
+    font-size: 0.78rem;
+    color: #5c1a1a;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.8;
+}
+
+.yj-footer-text {
+    font-size: 0.58rem;
+    color: rgba(139,80,30,0.38);
+    letter-spacing: 2px;
+}
+
+.result-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.result-side-title {
+    font: 700 1.7rem/1.4 "Noto Serif TC", "PMingLiU", serif;
+}
+
+.claim-code-wrap,
+.ticket-code-panel {
+    min-width: 220px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(112, 80, 57, 0.1);
+}
+
+.claim-code-wrap span,
+.ticket-code-panel span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+}
+
+.claim-code-wrap strong,
+.ticket-code-panel strong {
+    font-size: 1.08rem;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 1080px) {
+    .hero-panel,
+    .result-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .public-shell {
+        width: min(100vw - 18px, 100%);
+        padding-top: 12px;
+    }
+
+    .hero-panel,
+    .draw-board,
+    .fortune-sheet,
+    .result-side {
+        padding: 22px;
+    }
+
+    .seal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ritual-stage {
+        min-height: 460px;
+    }
+
+    .ritual-orbit {
+        width: min(360px, 92vw);
+    }
+
+    .ritual-token {
+        width: 62px;
+        border-radius: 20px;
+        font-size: 1.45rem;
+    }
+
+    .ritual-core {
+        width: 148px;
+        border-radius: 30px;
+    }
+
+    .ritual-trigger {
+        min-width: 100%;
+    }
+
+    .yj-meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yj-product-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

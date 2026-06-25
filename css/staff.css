@@ -1,0 +1,215 @@
+.staff-shell {
+    width: min(1200px, calc(100vw - 28px));
+    margin: 0 auto;
+    padding: 18px 0 40px;
+}
+
+.staff-head {
+    padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.staff-head h1 {
+    margin: 12px 0 10px;
+    font: 700 clamp(2rem, 3.6vw, 3.2rem)/1.08 "Noto Serif TC", "PMingLiU", serif;
+}
+
+.staff-head p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 44rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.metric-card {
+    padding: 20px;
+}
+
+.metric-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin-bottom: 8px;
+}
+
+.metric-card strong {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.staff-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 18px;
+}
+
+.main-column,
+.side-column {
+    display: grid;
+    gap: 18px;
+    align-content: start;
+}
+
+.panel {
+    padding: 24px;
+}
+
+.pending-list,
+.record-list,
+.inventory-list {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+}
+
+.pending-empty,
+.record-empty {
+    color: var(--muted);
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.68);
+    border: 1px solid rgba(112, 80, 57, 0.1);
+}
+
+.pending-item,
+.record-item {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(112, 80, 57, 0.1);
+}
+
+.pending-item button {
+    white-space: nowrap;
+}
+
+.record-item.claimed {
+    opacity: 0.88;
+}
+
+.meta-small {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.item-title {
+    font-weight: 800;
+}
+
+.status-chip {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    min-width: 92px;
+    padding: 0 12px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.82rem;
+}
+
+.status-chip.pending {
+    background: rgba(155, 90, 40, 0.12);
+    color: var(--warn);
+}
+
+.status-chip.claimed {
+    background: rgba(47, 108, 68, 0.12);
+    color: var(--ok);
+}
+
+.inventory-item {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr) 68px;
+    gap: 12px;
+    align-items: center;
+}
+
+.inventory-chip {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.inventory-bar {
+    position: relative;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(93, 36, 23, 0.08);
+    overflow: hidden;
+}
+
+.inventory-bar span {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: inherit;
+}
+
+.claim-form {
+    margin-top: 18px;
+    display: grid;
+    gap: 10px;
+}
+
+.claim-form label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.claim-form input {
+    min-height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(112, 80, 57, 0.16);
+    background: rgba(255,255,255,0.84);
+    padding: 0 16px;
+}
+
+@media (max-width: 1080px) {
+    .metrics-grid,
+    .staff-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .staff-shell {
+        width: min(100vw - 18px, 100%);
+        padding-top: 12px;
+    }
+
+    .staff-head,
+    .panel {
+        padding: 22px;
+    }
+
+    .staff-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pending-item,
+    .record-item,
+    .inventory-item {
+        grid-template-columns: 1fr;
+    }
+}
