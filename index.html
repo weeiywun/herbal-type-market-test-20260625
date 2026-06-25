@@ -11,23 +11,87 @@
     <main class="public-shell">
         <section class="page page-intro active" id="intro-screen">
             <div class="hero-panel paper-card">
+                <div class="hero-atmosphere" aria-hidden="true">
+                    <span class="hero-mist mist-a"></span>
+                    <span class="hero-mist mist-b"></span>
+                    <span class="hero-mist mist-c"></span>
+                </div>
+
                 <div class="hero-copy">
-                    <div class="eyebrow">高雄市中藥商業同業公會</div>
-                    <h1>五行開運<br>漢方籤</h1>
-                    <p>
-                        啟動今日的草本入口，讓五行流轉後替你請出一張運勢籤。每張籤詩對應一款漢方茶包，請將結果頁交由現場工作人員覆核領獎。
-                    </p>
-                    <button class="button button-primary" id="start-draw">開始抽籤</button>
+                    <div class="hero-copy-main">
+                        <div class="eyebrow">高雄市中藥商業同業公會</div>
+                        <h1>先讀五行<br>再請一籤</h1>
+                        <p>
+                            漢方講究草本之性，也講究人與節氣之間的流轉。這一頁不是立刻抽籤，而是先帶你走進五行的節奏，讓木、火、土、金、水慢慢對應到你的今日狀態。
+                        </p>
+                    </div>
+
+                    <div class="hero-scroll-cue">
+                        <span>向下讀完五行導覽</span>
+                        <strong>頁尾再開始今日抽籤</strong>
+                    </div>
                 </div>
 
                 <div class="hero-side">
-                    <div class="seal-card">
-                        <div class="seal-grid" id="intro-elements"></div>
+                    <div class="intro-lead-card">
+                        <div class="intro-lead-kicker">HERBAL INTRODUCTION</div>
+                        <p>
+                            五行不是抽象符號，而是一種觀察身心、氣味、季節與日常節奏的方法。先理解它們，再進入活動，會讓這張籤更像一段屬於你的漢方相遇。
+                        </p>
                     </div>
-                    <p class="page-note">
-                        本活動內容為趣味互動與茶飲介紹，非醫療診斷或治療建議。實際領獎與發送情形以現場工作人員覆核為準。
-                    </p>
                 </div>
+            </div>
+
+            <div class="intro-story">
+                <section class="intro-block paper-card">
+                    <div class="eyebrow">五行是什麼</div>
+                    <h2>一套看待身體與節奏的漢方語言</h2>
+                    <p>
+                        在漢方觀念裡，五行不是算命符號，而是理解自然變化的一種方式。木像生發，火像外放，土像承接，金像收斂，水像潛藏。它們既描述季節，也映照情緒、作息、身體感受與日常傾向。
+                    </p>
+                    <p>
+                        當我們說一個人偏向哪一種行，不是把人固定分類，而是在某一個時刻，看見他此刻比較需要哪一種平衡。你等等抽到的，不是標準答案，而是一個今日的提示。
+                    </p>
+                </section>
+
+                <section class="intro-block paper-card">
+                    <div class="eyebrow">五行導覽</div>
+                    <h2>先感受五種不同的氣質</h2>
+                    <p class="page-note">
+                        每一行都代表一種流動方式。你不必急著對號入座，只要慢慢讀，看看今天的自己比較靠近哪一種節奏。
+                    </p>
+                    <div class="seal-grid intro-seal-grid" id="intro-elements"></div>
+                </section>
+
+                <section class="intro-block paper-card">
+                    <div class="eyebrow">參與方式</div>
+                    <h2>讀完之後，再讓今日的五行為你落籤</h2>
+                    <div class="intro-steps">
+                        <article class="intro-step">
+                            <strong>01</strong>
+                            <p>先閱讀五行的介紹，感受哪一種描述最接近你現在的狀態。</p>
+                        </article>
+                        <article class="intro-step">
+                            <strong>02</strong>
+                            <p>滑到頁尾開始抽籤，讓系統替你請出今日的五行訊息與專屬籤詩。</p>
+                        </article>
+                        <article class="intro-step">
+                            <strong>03</strong>
+                            <p>完成後再查看結果頁，現場活動內容與後續兌換都會在那一刻揭曉。</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="intro-cta paper-card">
+                    <div>
+                        <div class="eyebrow">準備好了</div>
+                        <h2>把神祕感留到最後一刻</h2>
+                        <p>
+                            如果你已經讀完五行導覽，就從這裡開始今日抽籤。先不預告會遇見什麼，讓結果在翻頁後出現。
+                        </p>
+                    </div>
+                    <button class="button button-primary" id="start-draw">開始抽籤</button>
+                </section>
             </div>
         </section>
 
@@ -35,33 +99,35 @@
             <div class="draw-board paper-card">
                 <div class="section-head">
                     <div>
-                        <div class="eyebrow">五行流轉</div>
-                        <h2>啟動開運藥櫃</h2>
-                        <p>按下唯一入口後，五行會自行流轉並抽出今日結果，民眾不需要自行選擇項目。</p>
+                        <div class="eyebrow">開始抽籤</div>
+                        <h2>請藥櫃為你取出今日籤意</h2>
+                        <p>請直接輕觸九宮格中的任一抽屜。藥櫃會自行為你開啟其中一格，並在中央顯影今日的五行籤卷。</p>
                     </div>
-                    <button class="button button-secondary" data-screen-target="intro-screen">返回首頁</button>
+                    <button class="button button-secondary" data-screen-target="intro-screen">返回導覽</button>
                 </div>
 
-                <div class="ritual-stage">
-                    <div class="ritual-orbit" id="ritual-orbit" aria-hidden="true">
-                        <div class="ritual-ring ring-outer"></div>
-                        <div class="ritual-ring ring-inner"></div>
-                        <div class="ritual-core">
-                            <div class="ritual-core-mark">藥</div>
-                            <div class="ritual-core-copy">五行開運入口</div>
+                <div class="cabinet-scene" id="cabinet-scene">
+                    <div class="cabinet-backdrop" aria-hidden="true"></div>
+                    <div class="cabinet-glow" aria-hidden="true"></div>
+                    <div class="cabinet-grid" id="cabinet-grid"></div>
+                    <div class="drawer-particles" id="drawer-particles" aria-hidden="true"></div>
+
+                    <div class="fortune-reveal" id="fortune-reveal" aria-live="polite">
+                        <div class="fortune-envelope" id="fortune-envelope">
+                            <div class="fortune-seal" aria-hidden="true">籤</div>
+                            <span>藥櫃正在為你取出今日處方</span>
                         </div>
-                        <div class="ritual-token token-metal">金</div>
-                        <div class="ritual-token token-wood">木</div>
-                        <div class="ritual-token token-water">水</div>
-                        <div class="ritual-token token-fire">火</div>
-                        <div class="ritual-token token-earth">土</div>
-                    </div>
 
-                    <button class="ritual-trigger" type="button" id="ritual-trigger">
-                        <span>啟動抽籤</span>
-                        <strong>抽出今日五行運勢</strong>
-                    </button>
+                        <div class="fortune-scroll" id="fortune-scroll">
+                            <div class="fortune-scroll-head">高雄市中藥商業同業公會</div>
+                            <strong class="fortune-scroll-title" id="reveal-title">五行籤卷正在展開</strong>
+                            <p class="fortune-scroll-copy" id="reveal-copy">木質抽屜會緩緩滑開，草本氣息散出後，今日的籤意才會浮現。</p>
+                            <button class="button button-primary fortune-continue" type="button" id="fortune-continue">揭曉完整籤詩</button>
+                        </div>
+                    </div>
                 </div>
+
+                <p class="drawer-note">手機操作建議直接點抽屜面板。抽屜一旦開始滑開，請稍等藥櫃完成整個顯影儀式。</p>
             </div>
         </section>
 
@@ -78,15 +144,15 @@
                             <div class="yj-num-row">
                                 <span class="yj-num-label">第</span>
                                 <span class="yj-num" id="yj-num">1</span>
-                                <span class="yj-num-label">首</span>
+                                <span class="yj-num-label">籤</span>
                             </div>
-                            <div class="yj-luck" id="yj-luck">◈ 吉 ◈</div>
+                            <div class="yj-luck" id="yj-luck">中吉</div>
                         </div>
 
                         <div class="yj-body">
                             <div class="yj-persona-row">
-                                <span class="yj-persona-label">今日抽中</span>
-                                <span class="yj-persona-name" id="yj-persona-name">木行．舒展籤</span>
+                                <span class="yj-persona-label">今日籤象</span>
+                                <span class="yj-persona-name" id="yj-persona-name">青木舒展</span>
                             </div>
                             <div class="yj-meta-grid">
                                 <div class="yj-meta-item">
@@ -94,49 +160,49 @@
                                     <strong class="yj-meta-v" id="ticket-element">木</strong>
                                 </div>
                                 <div class="yj-meta-item">
-                                    <span class="yj-meta-k">籤意</span>
-                                    <strong class="yj-meta-v" id="result-keyword">今日籤意</strong>
+                                    <span class="yj-meta-k">關鍵字</span>
+                                    <strong class="yj-meta-v" id="result-keyword">今日提示</strong>
                                 </div>
                             </div>
                         </div>
 
                         <div class="yj-quote">
-                            <div class="yj-quote-poem" id="result-poem">春意入枝頭，新芽帶好風。</div>
-                            <div class="yj-quote-desc" id="result-message">今天適合舒展心念，順著節奏與人交流，新的靈感會自然靠近。</div>
+                            <div class="yj-quote-poem" id="result-poem">籤詩內容會出現在這裡</div>
+                            <div class="yj-quote-desc" id="result-message">結果生成後，這裡會顯示你的漢方訊息與今日解讀。</div>
                         </div>
 
                         <div class="yj-products">
-                            <div class="yj-products-title">── 對應漢方茶包 ──</div>
+                            <div class="yj-products-title">對應漢方茶包</div>
                             <div class="yj-product-card">
-                                <div class="yj-product-rank">開運茶禮</div>
+                                <div class="yj-product-rank">今日對應</div>
                                 <div class="yj-product-icon" id="gift-visual"></div>
                                 <div class="yj-product-info">
-                                    <div class="yj-product-name" id="tea-name">金銀魚腥七葉茶</div>
-                                    <div class="yj-product-poem" id="tea-story">以清新草本香氣描繪木行的伸展感。</div>
+                                    <div class="yj-product-name" id="tea-name">漢方茶包名稱</div>
+                                    <div class="yj-product-poem" id="tea-story">生成結果後，這裡會顯示相對應的草本概念。</div>
                                     <div class="ingredient-list ingredient-list-yaojian" id="tea-ingredients"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="yj-footer">
-                            <div class="yj-footer-motto" id="result-side-title">舒展、清爽、適合展開一段新對話</div>
-                            <div class="yj-footer-text">本籤為市集互動體驗與茶飲介紹，非醫療診斷依據</div>
+                            <div class="yj-footer-motto" id="result-side-title">請依結果頁內容進行現場兌換</div>
+                            <div class="yj-footer-text">本頁僅供活動現場核對使用，請於工作人員指引下完成後續流程。</div>
                         </div>
                     </div>
                 </article>
 
                 <aside class="result-side paper-card">
-                    <div class="eyebrow">領獎資訊</div>
-                    <div class="result-side-title">請交由工作人員覆核領獎</div>
-                    <p class="result-side-copy" id="result-side-copy">工作人員將依此領獎碼進行覆核。後續接 Supabase 後，這個碼會對應正式的 pending 紀錄。</p>
+                    <div class="eyebrow">活動憑據</div>
+                    <div class="result-side-title">請保留此頁面給工作人員核對</div>
+                    <p class="result-side-copy" id="result-side-copy">完成抽籤後，請將畫面交給現場工作人員確認。兌換與後續資訊皆以現場流程為準。</p>
 
                     <div class="claim-code-wrap">
-                        <span>領獎碼</span>
+                        <span>領取序號</span>
                         <strong id="claim-code">KHM-0000-XXXX</strong>
                     </div>
 
                     <div class="ticket-code-panel">
-                        <span>活動流水號</span>
+                        <span>抽籤編號</span>
                         <strong id="ticket-code">NO. 0000</strong>
                     </div>
 
